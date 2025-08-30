@@ -47,3 +47,39 @@ For local data persistence, the project uses **Hive**, a lightweight and fast No
 ### Project Structure
 
 The project follows a feature-first directory structure to keep the code organized and scalable:
+
+lib/
+|-- core/
+|   |-- services/         # Reusable services (e.g., HiveService)
+|-- features/
+|   |-- product/
+|   |   |-- enums/        # Shared enums (e.g., SortOption)
+|   |   |-- models/       # Data models (e.g., Product)
+|   |   |-- views/        # UI Widgets/Screens
+|   |   |-- viewmodels/   # State and business logic
+|-- main.dart             # App entry point
+
+## Getting Started
+
+To run this project locally, follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repository-url>
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd stocking
+    ```
+3.  **Install dependencies:**
+    ```bash
+    flutter pub get
+    ```
+4.  **Run the build_runner (for Hive model generation):**
+    ```bash
+    flutter packages pub run build_runner build --delete-conflicting-outputs
+    ```
+5.  **Run the application:**
+    ```bash
+    flutter run
+    ```
