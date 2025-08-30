@@ -16,13 +16,12 @@ class Product extends HiveObject {
   @HiveField(3)
   late DateTime registrationDate;
   
-  // Novo campo obrigatório
   @HiveField(4)
   late int quantity;
 
   Product({
     required this.name,
-    required this.quantity, // Adicionado ao construtor
+    required this.quantity,
     this.location,
     this.storedBy,
   }) {

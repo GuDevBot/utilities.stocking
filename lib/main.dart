@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Usar MultiProvider para gerenciar múltiplos ViewModels
+    // Using MultiProvider to manage multiple ViewModels
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => HomeViewModel()),
@@ -38,14 +38,13 @@ class MyApp extends StatelessWidget {
           inputDecorationTheme: const InputDecorationTheme(
             border: OutlineInputBorder(),
           ),
-          cardTheme: CardThemeData( // Estilo para os cards da lista
+          cardTheme: CardThemeData(
             elevation: 2,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
           ),
         ),
-        // A tela inicial agora é a HomeView
         home: const HomeView(),
       ),
     );

@@ -10,7 +10,6 @@ class RegisterProductViewModel extends ChangeNotifier {
   final TextEditingController storedByController = TextEditingController();
   final TextEditingController quantityController = TextEditingController();
 
-  // Novas listas para as sugestões
   List<String> productNameSuggestions = [];
   List<String> locationSuggestions = [];
   List<String> storedBySuggestions = [];
@@ -25,14 +24,13 @@ class RegisterProductViewModel extends ChangeNotifier {
     notifyListeners();
   }
   RegisterProductViewModel() {
-    // Carrega as sugestões assim que a ViewModel é criada
     _loadSuggestions();
   }
   
   void _loadSuggestions() {
     final allProducts = _hiveService.getAllProducts();
 
-    // Usar Sets para garantir que os valores sejam únicos
+    // Use sets to avoid duplicate suggestions
     final nameSet = <String>{};
     final locationSet = <String>{};
     final storedBySet = <String>{};
@@ -56,19 +54,19 @@ class RegisterProductViewModel extends ChangeNotifier {
     _errorMessage = null;
 
     if (nameController.text.isEmpty) {
-      _errorMessage = "O nome do produto é obrigatório.";
+      _errorMessage = "Product name is required";
       notifyListeners();
       return false;
     }
     if (quantityController.text.isEmpty) {
-      _errorMessage = "A quantidade é obrigatória.";
+      _errorMessage = "Quantity is required";
       notifyListeners();
       return false;
     }
     
     final quantity = int.tryParse(quantityController.text);
     if (quantity == null || quantity <= 0) {
-      _errorMessage = "Por favor, insira uma quantidade válida (número maior que zero).";
+      _errorMessage = "Please, enter a valid quantity (number greater than zero).";
       notifyListeners();
       return false;
     }
@@ -88,7 +86,7 @@ class RegisterProductViewModel extends ChangeNotifier {
       _setLoading(false);
       return true;
     } catch (e) {
-      _errorMessage = "Erro ao salvar o produto: $e";
+      _errorMessage = "Erro saving product: $e";
       _setLoading(false);
       notifyListeners();
       return false;
