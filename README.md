@@ -1,6 +1,6 @@
 # Stocking - Inventory Management App
 
-![App Thumbnail](https://i.imgur.com/rLzG9L9.png)
+![App Thumbnail](https://github.com/GuDevBot/utilities.stocking/blob/main/assets/stocking_icon_512.png)
 
 A simple, offline-first mobile application built with Flutter to help users manage and organize product inventory. This app provides a clean and intuitive interface for tracking what you have, where it is, and how much of it is in stock.
 
@@ -48,6 +48,7 @@ For local data persistence, the project uses **Hive**, a lightweight and fast No
 
 The project follows a feature-first directory structure to keep the code organized and scalable:
 
+```
 lib/
 |-- core/
 |   |-- services/         # Reusable services (e.g., HiveService)
@@ -58,6 +59,7 @@ lib/
 |   |   |-- views/        # UI Widgets/Screens
 |   |   |-- viewmodels/   # State and business logic
 |-- main.dart             # App entry point
+```
 
 ## Getting Started
 
