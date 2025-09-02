@@ -27,9 +27,9 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/stocking_icon_512.png"
+  image_path: "assets/stocking-icon.png"
   adaptive_icon_background: "#212020"
-  adaptive_icon_foreground: "assets/stocking_transparent.png"
+  adaptive_icon_foreground: "assets/stocking-transparent.png"
   min_sdk_android: 21 
 
 flutter:
